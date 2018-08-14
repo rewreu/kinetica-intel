@@ -1,6 +1,5 @@
 FROM kinetica/kinetica-intel:latest
 
-LABEL maintainer="Zhe Wu <zwu@kinetica.com>"
+LABEL maintainer="Zhe Wu  <zwu@kinetica.com>"
 
-RUN usermod -a -G fuse gpudb_proc
-RUN chgrp fuse /dev/fuse
+CMD usermod -a -G fuse gpudb_proc ; chgrp fuse /dev/fuse ; ldconfig && /opt/gpudb-docker-start.sh
